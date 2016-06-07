@@ -1,0 +1,58 @@
+Java program using setter/getter methods
+
+Product.java
+
+package com.niit.training.product;
+
+public class Product {
+
+	private int productId;
+	private String productName;
+	private Double productPrice;
+	
+	public int getProductId() {
+		return productId;
+	}
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public Double getProductPrice() {
+		return productPrice;
+	}
+	public void setProductPrice(Double productPrice) {
+		this.productPrice = productPrice;
+	}
+	
+	
+}
+
+
+Test.java
+
+package com.niit.training;
+
+import com.niit.training.product.Product;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Product product=new Product();
+		
+		product.setProductId(11987);
+		product.setProductName("Park Avenue");
+		product.setProductPrice(195d);
+		
+		System.out.println(product.getProductId());
+		System.out.println(product.getProductName());
+		System.out.println(product.getProductPrice());
+
+	}
+
+}
