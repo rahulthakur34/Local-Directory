@@ -1,0 +1,135 @@
+10-06-2016-1
+
+about.html
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>About Us</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Eshop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<!-- for bootstrap working -->
+	<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<!-- //for bootstrap working -->
+<!-- cart -->
+	<script src="js/simpleCart.min.js"> </script>
+<!-- cart -->
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+<div class="header">
+		<div class="header-top-strip">
+			<div class="container">
+				<div class="header-top-left">
+					<ul>
+						<li><a href="login.html"><span class="glyphicon glyphicon-user"> </span>Login</a></li>
+						<li><a href="register.html"><span class="glyphicon glyphicon-lock"> </span>Create an Account</a></li>			
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+
+<div class="inner-banner">
+		<div class="container">
+			<div class="banner-top inner-head">
+				<nav class="navbar navbar-default" role="navigation">
+	    <div class="navbar-header">
+	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+	        </button>
+				<div class="logo">
+					<h1><a href="first.html"><span>E</span> -Shop</a></h1>
+				</div>
+	    </div>
+	    <!--/.navbar-header-->
+	
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	        <ul class="nav navbar-nav">
+			<li><a href="first.html">HOME</a></li>
+		        <li class="dropdown">
+		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">CATEGORY<b class="caret"></b></a>
+		            <ul class="dropdown-menu multi-column columns-3">
+			            <div class="row">
+				            <div class="col-sm-4">
+					            <ul class="multi-column-dropdown">
+						            <li><a href="men.html">MEN</a></li>
+						            <li><a href="women.html">WOMEN</a></li>
+						            <li><a href="kids.html">KIDS</a></li>
+						        </ul>
+				            </div>
+							<div class="clearfix"></div>
+			            </div>
+		            </ul>
+		        </li>
+	         <li><a href="about.html">ABOUT US</a></li>
+		     <li><a href="contact.html">CONTACT</a></li>
+	        </ul>
+	    </div>
+	    <!--/.navbar-collapse-->
+	</nav>
+	<!--/.navbar-->
+</div>
+	</div>
+		</div>
+		
+		<div class="content">
+	<div class="container">			   
+		   <div class="typrography">
+		   <div class="dreamcrub">
+			   	 <ul class="breadcrumbs">
+                    <li class="home">
+                       <a href="first.html" title="Go to Home Page">Home</a>&nbsp;
+                       <span>&gt;</span>
+                    </li>
+                    <li class="women">
+                       About Us
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+			   </div>
+	      <h2 class="heading text-center">About Us</h2>
+	      <h3>E-Shop is India's largest online marketplace, with the widest assortment of 12 million+ products across 500+ diverse categories from thousands of regional, national, and international brands and retailers.
+
+With millions of users and 150,000 sellers, E-Shop is the shopping destination for internet users across the country, delivering to 5000+ cities and towns in India.
+
+With its acquisition of Freecharge in 2015, a leading mobile transactions platform, E-Shop has become the largest mCommerce company in the country.
+
+In its journey till now,E-Shop  has partnered with several global marquee investors and individuals such as SoftBank, BlackRock, Temasek, eBay Inc., Premji Invest, Intel Capital, Bessemer Venture Partners, Mr. Ratan Tata, among others.</h3>
+	      </div>
+	      </div>
+	      </div>
+		 
+		 <div class="news-letter">
+			<div class="container">
+			<div class="cards text-center">
+				<img src="images/cards.jpg" alt="" />
+		  </div>
+		  <div class="copyright text-center">
+				<p>© 2015 Eshop. All Rights Reserved</p>
+		  </div>
+		</div>
+		</div>
+		  
+
+</body>
+
+</html>
