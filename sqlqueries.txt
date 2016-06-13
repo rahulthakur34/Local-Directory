@@ -1,0 +1,38 @@
+13-06-2016
+
+SQL Queries practised by me
+
+
+1.  select * from product;
+
+2.  select productId,productName,productPrice from product;
+
+3.  select distinct city from suppliers;
+
+4.  select productPrice from product where productId='PRO009'
+
+5.  select * from suppliers where city='Hyderabad' or city='Mumbai'
+
+6.  select * from customers where country='India' and city='Bhubaneswar'
+ 
+7.  select * from products order by productPrice asc/desc
+
+8.  select * from customers where city in('Hyderabad','Delhi')
+
+9.  select * from product where productPrice between 10000 and 20000
+
+10. select orders.orderID, customers.customerName, orders.orderDate from orders inner join customers on     orders.customerID=customers.customerID;
+
+11. select orders.orderID, customers.customerName, orders.orderDate from orders left join customers on             orders.customerID=customers.customerID;
+
+12. select orders.orderID, customers.customerName, orders.orderDate from orders outer join customers on             orders.customerID=customers.customerID;
+
+13. select orders.orderID, customers.customerName, orders.orderDate from orders full outer join customers on           orders.customerID=customers.customerID;
+
+14. create table person(P_Id int not null,LastName varchar(255) not null,FirstName varchar(255),Address varchar        (255))
+
+15. create table person(P_Id int not null unique,LastName varchar(255) not null,FirstName varchar(255),Address         varchar(255))
+
+16. create table person(P_Id int primary key,LastName varchar(255) not null,FirstName varchar(255),Address             varchar(255))
+
+17. create table orders(O_Id int primary key,OrderNo int not null,P_Id int foreign key references                 persons(P_Id))
