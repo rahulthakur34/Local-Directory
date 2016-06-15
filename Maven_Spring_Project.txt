@@ -1,0 +1,62 @@
+Product.Java
+
+package com.niit.training.bean;
+import org.springframework.stereotype.Component;
+@Component
+public class Product {
+	
+	private String id;
+	private String name;
+	private Double price;
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Double getPrice() {
+		return price;
+	}
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+	
+	
+
+}
+-----------------------------------------------------------------------------------
+
+ProductTest.java
+
+package com.niit.training.test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import com.niit.training.bean.Product;
+public class ProductTest {
+
+	public static void main(String[] args)
+	{
+		AnnotationConfigApplicationContext context= new AnnotationConfigApplicationContext();
+		context.scan("com.niit.training.bean");
+		context.refresh();
+		
+		Product p1=(Product)context.getBean("product");
+		 
+		if(p1==null)
+		{
+			System.out.println("Object not Created");
+		}
+		else
+		{
+			System.out.println("Object Created");
+		}
+	}
+	
+}
+
