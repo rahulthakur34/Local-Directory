@@ -1,0 +1,29 @@
+package com.niit.efashion.test;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.niit.efashion.dao.SupplierDAO;
+import com.niit.efashion.model.Supplier;
+
+public class SupplierTest {
+
+	public static void main(String[] args) {
+		
+		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
+		context.scan("com.niit.efashion");
+		context.refresh();
+		
+		SupplierDAO supplierDAO=(SupplierDAO) context.getBean("supplierDAO");
+		
+		
+		Supplier supplier=(Supplier) context.getBean("supplier");
+		
+		supplier.setId("S002");
+		supplier.setName("Big Bazaar");
+		supplier.setAddress("Bangalore");
+		
+		supplierDAO.saveOrUpdate(supplier);
+
+	}
+
+}

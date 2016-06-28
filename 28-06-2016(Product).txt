@@ -1,0 +1,108 @@
+package com.niit.efashion.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Entity
+@Table(name="PRODUCT")
+@Component
+public class Product {
+	
+	
+	private String productId;
+	
+	private String productName;
+	
+	private String categoryname;
+	
+	private String description;
+	
+	private String suppliername;
+	
+	private String price;
+	
+	private String stock;
+	
+	@Id
+	@Column(name="PRODUCT_ID")
+	public String getId() 
+	{
+		return productId;
+	}
+	
+	public void setId(String id) 
+	{
+		this.productId = id;
+	}
+	
+	@Column(name="PRODUCT_NAME")
+	public String getName()
+	{
+		return productName;
+	}
+	
+	public void setName(String name) 
+	{
+		this.productName = name;
+	}
+	
+	@Column(name="CATEGORY_NAME")
+	public String getCategoryname() 
+	{
+		return categoryname;
+	}
+	
+	public void setCategoryname(String categoryname) 
+	{
+		this.categoryname = categoryname;
+	}
+	
+	public String getDescription() 
+	{
+		return description;
+	}
+	
+	public void setDescription(String description) 
+	{
+		this.description = description;
+	}
+	
+	@Column(name="SUPPLIER_NAME")
+	public String getSuppliername() 
+	{
+		return suppliername;
+	}
+	
+	public void setSuppliername(String suppliername) 
+	{
+		this.suppliername = suppliername;
+	}
+	
+	public String getPrice() 
+	{
+		return price;
+	}
+	
+	public void setPrice(String price) 
+	{
+		this.price = price;
+	}
+	
+	public String getStock()
+	{
+		return stock;
+	}
+	
+	public void setStock(String stock) 
+	{
+		this.stock = stock;
+	}
+	
+	
+
+}
+
