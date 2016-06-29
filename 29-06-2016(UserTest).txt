@@ -1,0 +1,30 @@
+package com.niit.efashion.test;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.niit.efashion.dao.UserDAO;
+import com.niit.efashion.model.User;
+
+
+
+public class UserTest {
+
+	public static void main(String[] args) {
+
+		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
+		context.scan("com.niit.efashion");
+		context.refresh();
+		
+		UserDAO userDAO=(UserDAO) context.getBean("userDAO");
+		
+		User user=(User) context.getBean("user");
+		
+		user.setUserId("U001");
+		user.setPassword("NIIT");
+		user.setUserType("ADMIN");
+		
+		userDAO.saveorupdate(user);
+		
+	}
+
+}
