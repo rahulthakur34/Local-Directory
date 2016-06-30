@@ -1,0 +1,73 @@
+package com.niit.efashion.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class MainController {
+	
+	@RequestMapping("/")
+	public ModelAndView getLanding()
+	{
+		ModelAndView mv=new ModelAndView("landingpage");
+		return mv;
+	}
+	
+	@RequestMapping("/gotolanding")
+	public ModelAndView getLandingPage()
+	{
+		ModelAndView mv=new ModelAndView("landingpage");
+		return mv;
+	}
+	
+	@RequestMapping("/gotologin")
+	public ModelAndView getLoginPage()
+	{
+		ModelAndView mv=new ModelAndView("login");
+		return mv;
+	}
+
+	@RequestMapping("/gotoregistration")
+	public ModelAndView getRegistrationPage()
+	{
+		ModelAndView mv=new ModelAndView("registration");
+		return mv;
+	}
+	
+	@RequestMapping("/gotomen")
+	public ModelAndView getMenPage()
+	{
+		ModelAndView mv=new ModelAndView("men");
+		return mv;
+	}
+	
+	@RequestMapping("/gotowomen")
+	public ModelAndView getWomenPage()
+	{
+		ModelAndView mv=new ModelAndView("women");
+		return mv;
+	}
+	
+	@RequestMapping("/gotokids")
+	public ModelAndView getKidsPage()
+	{
+		ModelAndView mv=new ModelAndView("kids");
+		return mv;
+	}
+	
+	@RequestMapping("/gotoaboutus")
+	public ModelAndView getAboutUsPage()
+	{
+		ModelAndView mv=new ModelAndView("aboutus");
+		return mv;
+	}
+	
+	@RequestMapping("/gotocontactus")
+	public ModelAndView getContactUsPage()
+	{
+		ModelAndView mv=new ModelAndView("contactus");
+		return mv;
+	}
+
+}

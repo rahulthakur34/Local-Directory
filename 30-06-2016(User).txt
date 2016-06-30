@@ -1,0 +1,56 @@
+package com.niit.efashion.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Entity
+@Table(name="USER")
+@Component
+public class User {
+
+	private String id;
+	
+	private String password;
+	
+	private String userType;
+	
+	@Id
+	@Column(name="USER_ID")
+	public String getId() 
+	{
+		return id;
+	}
+	
+	public void setId(String id) 
+	{
+		this.id = id;
+	}
+	
+	public String getName() 
+	{
+		return password;
+	}
+	
+	public void setName(String name) 
+	{
+		this.password = name;
+	}
+	
+	@Column(name="USER_TYPE")
+	public String getDescription() 
+	{
+		return userType;
+	}
+	
+	public void setDescription(String description) 
+	{
+		this.userType = description;
+	}
+
+	
+	
+}
