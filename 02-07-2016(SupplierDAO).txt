@@ -1,0 +1,17 @@
+package com.niit.efashion.dao;
+
+import java.util.List;
+
+import com.niit.efashion.model.Supplier;
+
+public interface SupplierDAO {
+
+    public List<Supplier> list();
+	
+	public Supplier get(String supplierId);
+	
+	public void saveorupdate(Supplier supplier);
+	
+	public void delete(String supplierId);
+	
+}

@@ -1,0 +1,61 @@
+package com.niit.efashion.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.niit.efashion.dao.SupplierDAO;
+import com.niit.efashion.model.Supplier;
+
+@Controller
+public class SupplierController {
+
+	@Autowired
+	SupplierDAO supplierDAO;
+	
+	@RequestMapping(value="/getAllSuppliers", method=RequestMethod.GET)
+	public ModelAndView listSuppliers()
+	{
+		ModelAndView modelAndView=new ModelAndView("supplier");
+		modelAndView.addObject("supplier", new Supplier());
+		modelAndView.addObject("supplierList", this.supplierDAO.list());
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/supplier/add", method = RequestMethod.POST)
+	public String addSupplier(@ModelAttribute("supplier") Supplier supplier)
+	{
+		supplierDAO.saveorupdate(supplier);
+		return "redirect:/getAllSuppliers";
+	}
+	
+	@RequestMapping("supplier/remove/{supplierId}")
+	public String removeSupplier(@PathVariable("supplierId") String supplierId, ModelMap model) throws Exception
+    {
+    	try {
+			supplierDAO.delete(supplierId);
+			model.addAttribute("message", "Successfully Added");
+		} catch (Exception e) {
+			model.addAttribute("message", e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return "redirect:/getAllSuppliers";
+	}
+	
+	@RequestMapping("supplier/edit/{supplierId}")
+	public String editSupplier(@PathVariable("supplierId") String supplierId, Model model)
+	{
+		System.out.println("editSupplier");
+        model.addAttribute("supplier", this.supplierDAO.get(supplierId));
+        model.addAttribute("listSupplier", this.supplierDAO.list());
+        return "supplier";
+	}
+	
+}
