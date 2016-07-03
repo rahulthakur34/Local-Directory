@@ -1,0 +1,17 @@
+package com.niit.efashion.dao;
+
+import java.util.List;
+
+import com.niit.efashion.model.Product;
+
+public interface ProductDAO {
+
+    public List<Product> list();
+	
+	public Product get(String productId);
+	
+	public void saveorupdate(Product product);
+	
+	public void delete(String productId);
+	
+}

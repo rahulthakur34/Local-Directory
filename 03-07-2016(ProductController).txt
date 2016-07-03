@@ -1,0 +1,61 @@
+package com.niit.efashion.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.niit.efashion.dao.ProductDAO;
+import com.niit.efashion.model.Product;
+
+@Controller
+public class ProductController {
+
+	@Autowired
+	ProductDAO productDAO;
+	
+	@RequestMapping(value="/getAllProducts", method=RequestMethod.GET)
+	public ModelAndView listSuppliers()
+	{
+		ModelAndView modelAndView=new ModelAndView("product");
+		modelAndView.addObject("product", new Product());
+		modelAndView.addObject("productList", this.productDAO.list());
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/product/add", method = RequestMethod.POST)
+	public String addProduct(@ModelAttribute("product") Product product)
+	{
+		productDAO.saveorupdate(product);
+		return "redirect:/getAllProducts";
+	}
+	
+	@RequestMapping("product/remove/{productId}")
+	public String removeProduct(@PathVariable("productId") String productId, ModelMap model) throws Exception
+    {
+    	try {
+			productDAO.delete(productId);
+			model.addAttribute("message", "Successfully Added");
+		} catch (Exception e) {
+			model.addAttribute("message", e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return "redirect:/getAllProducts";
+	}
+	
+	@RequestMapping("product/edit/{productId}")
+	public String editProduct(@PathVariable("productId") String productId, Model model)
+	{
+		System.out.println("editProduct");
+        model.addAttribute("product", this.productDAO.get(productId));
+        model.addAttribute("listProduct", this.productDAO.list());
+        return "product";
+	}
+	
+}
